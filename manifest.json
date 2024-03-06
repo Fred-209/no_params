@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "No Params",
+  "version": "1.0.0",
+  "description": "Removes the query parameters of the current page, and copies this URL to the clipboard.",
+  "icons": {
+    "48": "icons/no_params.png"
+  },
+  "permissions": ["clipboardWrite", "activeTab", "tabs", "notifications"],
+  "background": {
+    "scripts": ["no_params.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/no_params.png",
+    "default_title": "No Params"
+  }
+}
